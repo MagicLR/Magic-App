@@ -35,8 +35,23 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:domain"))  // 类型安全的访问器
+
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.moshi)
+    implementation(libs.converter.scalars)
+
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    implementation(libs.room)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+
     // 初始化
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

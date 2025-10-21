@@ -23,3 +23,4 @@ rootProject.name = "Magic LR"
 include(":app")
 include(":core:data")
 include(":core:domain")
+include(":tv")

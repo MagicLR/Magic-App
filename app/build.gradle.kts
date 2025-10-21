@@ -23,7 +23,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true // 移除未使用的资源
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -48,6 +49,9 @@ dependencies {
     implementation(project(":core:domain"))  // 类型安全的访问器
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.material.icons.core)
+    implementation(libs.material.icons.extended)
 
     // 初始化
     implementation(libs.androidx.core.ktx)
